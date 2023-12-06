@@ -1,0 +1,43 @@
+{
+  "airlines": [
+    {
+      "name": "Scandinavian Airlines",
+      "color": "0003BD",
+      "carry-on": {
+        "baggage-size": {
+          "length": 55,
+          "width": 40,
+          "depth": 23
+        },
+        "baggage-weight": 8
+      },
+      "url": "https://www.flysas.com/nl-en/travel-info/baggage/"
+    },
+    {
+      "name": "easyJet",
+      "color": "#f60",
+      "carry-on": {
+        "baggage-size": {
+          "length": 56,
+          "width": 45,
+          "depth": 25
+        },
+        "baggage-weight": 15
+      },
+      "url": "https://www.easyjet.com/en/help/baggage/cabin-bag-and-hold-luggage"
+    },
+    {
+      "name": "KLM",
+      "color": "#00a1de",
+      "carry-on": {
+        "baggage-size": {
+          "length": 55,
+          "width": 35,
+          "depth": 25
+        },
+        "baggage-weight": 12
+      },
+      "url": "https://www.klm.nl/en/information/baggage"
+    }
+  ]
+}

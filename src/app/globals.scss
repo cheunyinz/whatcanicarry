@@ -1,0 +1,74 @@
+/***********************/
+/*ALGEMEEN CSS DOCUMENT*/
+/***********************/
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*******************/
+/*CUSTOM PROPERTIES*/
+/*******************/
+
+:root {
+  /*font-size*/
+  --paragraph-size: clamp(1rem, calc(0.28vw + 1rem), 1.28rem);
+  --h3-size: clamp(1.25rem, calc(1vw + 1rem), 1.75rem);
+
+  /*color pallete*/
+  --primary-color: #131313;
+  --secondary-color: #1b1b1b;
+
+  --primary-font-color: #eae8e4;
+  --secondary-font-color: #888888;
+
+  /*algemeen measurements*/
+  --outer-empty-space: calc(50vw - 37.5rem);
+}
+
+/**********/
+/*GENERAL*/
+/**********/
+
+* a,
+* p,
+* li {
+  text-decoration: none;
+  color: var(--secondary-color);
+  font-family: "Poppins", sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+  -moz-osx-font-smoothing: grayscale;
+
+  line-height: 1.6;
+}
+
+* h1,
+* h2 {
+  font-family: "kopius", serif;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  max-width: 75rem;
+  padding: 1.5rem;
+  width: 100%;
+  margin: auto;
+}
+
+html {
+  background-color: var(--primary-color);
+  scroll-behavior: smooth;
+}
+
+* ul {
+  list-style: none;
+}
