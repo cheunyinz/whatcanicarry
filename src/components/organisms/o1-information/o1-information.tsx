@@ -1,4 +1,4 @@
-import React, { CSSProperties, useState } from "react";
+import React from "react";
 import styles from "./o1-information.module.scss";
 import M1InfoSection, {
   M1InfoSectionProps,

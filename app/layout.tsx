@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.scss";
-import Home from "../components/templates/PageHome";
+import Home from "../src/components/templates/PageHome";
 import { Poppins, Montserrat } from "next/font/google";
 import O2Footer from "@/components/organisms/o2-footer/o2-footer";
 
@@ -28,7 +28,7 @@ export default function RootLayout() {
     <html lang="en" className={`${montserrat.variable} ${poppins.variable}`}>
       <body>
         <Home />
-        <O2Footer text="Data is lastly updated on 19 December 2023" />
+        <O2Footer text="Data is lastly updated on 19 December 2023  " />
       </body>
     </html>
   );
