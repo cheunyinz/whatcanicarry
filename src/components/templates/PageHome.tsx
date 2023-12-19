@@ -8,7 +8,7 @@ import { A2DataProps } from "../atoms/a2-data/A2Data";
 import M2Form, { M2FormProps } from "../molecule/m2-form/M2Form";
 
 export default function Home() {
-  const [airline, setAirline] = useState("SAS");
+  const [airline, setAirline] = useState("EZY");
   const airlineData = airlines.find((a) => a.icao === airline);
 
   if (typeof document !== "undefined") {
@@ -22,9 +22,9 @@ export default function Home() {
     setAirline(event.target.value);
   };
 
-  const selectData: M2FormProps = {
+  const formData: M2FormProps = {
     heading: "What can I carry with",
-    form: [
+    select: [
       {
         name: "airlines",
         id: "airlines-select",
@@ -36,6 +36,11 @@ export default function Home() {
         )),
       },
     ],
+    toggle: {
+      firstToggle: "Metric",
+      secondToggle: "Imperial",
+      toggleName: "unit",
+    },
   };
 
   const airlineDataSet: Array<{
@@ -44,6 +49,7 @@ export default function Home() {
   }> = [
     {
       heading: "Maximum baggage size",
+
       dataset: [
         {
           number: airlineData?.carryOn?.baggageSize?.length || 0,
@@ -76,7 +82,11 @@ export default function Home() {
   return (
     <main>
       <div className="container">
-        <M2Form heading={selectData.heading} form={selectData.form} />
+        <M2Form
+          heading={formData.heading}
+          select={formData.select}
+          toggle={formData.toggle}
+        />
         <O1Information
           infosections={airlineDataSet}
           url={airlines.find((a) => a.icao === airline)?.url || "#"}

@@ -3,4 +3,11 @@
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+
+  .innerForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
 }

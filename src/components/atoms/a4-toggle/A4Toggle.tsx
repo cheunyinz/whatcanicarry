@@ -1,20 +1,37 @@
 import React from "react";
-import styles from "./A3Select.module.scss";
+import styles from "./A4Toggle.module.scss";
+import classNames from "clsx";
 
 export type A4ToggleProps = {
-  dropdownOptions: Array<HTMLOptionElement>;
+  firstToggle: string;
+  secondToggle: string;
+  toggleName: string;
 };
 
-const A2Data: React.FC<A4ToggleProps> = ({ dropdownOptions }) => {
+const A4Toggle: React.FC<A4ToggleProps> = ({
+  firstToggle,
+  secondToggle,
+  toggleName,
+}) => {
   return (
-    <select className={styles.a4Toggle} name="airlines" id="airlines-select">
-      {dropdownOptions.map((option) => (
-        <option key={option.value} value={option.value}>
-          {option.text}
-        </option>
-      ))}
-    </select>
+    <div className={styles.a4Toggle}>
+      {/* <label className="switch btn-color-mode-switch">  */}
+      <label className={styles.btnSwitch}>
+        <input
+          type="checkbox"
+          name={toggleName}
+          id={toggleName}
+          value="1"
+        ></input>
+        <label
+          htmlFor={toggleName}
+          data-on={secondToggle}
+          data-off={firstToggle}
+          className={styles.btnSwitchInner}
+        />
+      </label>
+    </div>
   );
 };
 
-export default A2Data;
+export default A4Toggle;

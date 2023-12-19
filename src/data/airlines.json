@@ -40,5 +40,33 @@
       "baggageWeight": 12
     },
     "url": "https://www.klm.nl/en/information/baggage"
+  },
+  {
+    "name": "Transavia",
+    "icao": "TRA",
+    "color": "#00d66c",
+    "carryOn": {
+      "baggageSize": {
+        "length": 55,
+        "width": 35,
+        "depth": 25
+      },
+      "baggageWeight": 10
+    },
+    "url": "https://www.transavia.com/help/en-nl/luggage/hand-luggage/how-much-to-bring"
+  },
+  {
+    "name": "Ryanair",
+    "icao": "RYR",
+    "color": "#f1c933",
+    "carryOn": {
+      "baggageSize": {
+        "length": 55,
+        "width": 40,
+        "depth": 20
+      },
+      "baggageWeight": 10
+    },
+    "url": "https://help.ryanair.com/hc/en-gb/categories/12489112419089-Bag-Rules"
   }
 ]

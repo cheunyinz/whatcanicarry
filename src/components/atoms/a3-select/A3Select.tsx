@@ -14,9 +14,14 @@ const A3Select: React.FC<A3SelectProps> = ({
   id,
   onChange,
 }) => {
+  const sortedChildren = React.Children.toArray(children).sort((a, b) => {
+    const aKey = (a as ReactElement<any>).key || "";
+    const bKey = (b as ReactElement<any>).key || "";
+    return aKey.localeCompare(bKey);
+  });
   return (
     <select className={styles.a3Select} name={name} id={id} onChange={onChange}>
-      {children}
+      {sortedChildren}
     </select>
   );
 };

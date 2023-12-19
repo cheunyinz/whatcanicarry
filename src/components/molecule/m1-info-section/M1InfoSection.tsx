@@ -20,6 +20,7 @@ const M1InfoSection: React.FC<M1InfoSectionProps> = ({ heading, dataset }) => {
               number={data.number}
               unit={data.unit}
               description={data.description}
+              isMetric={data.isMetric}
             />
           </li>
         ))}
