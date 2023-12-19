@@ -1,0 +1,15 @@
+.a2Data {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  .number {
+    font-size: 3rem;
+    font-family: var(--font-family-montserrat);
+    font-weight: 800;
+  }
+
+  .description {
+    color: var(--secondary-font-color);
+  }
+}

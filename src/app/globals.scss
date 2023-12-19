@@ -17,17 +17,16 @@
 :root {
   /*font-size*/
   --paragraph-size: clamp(1rem, calc(0.28vw + 1rem), 1.28rem);
-  --h3-size: clamp(1.25rem, calc(1vw + 1rem), 1.75rem);
-
+  --font-family-montserrat: var(--font-montserrat), serif;
+  --font-family-poppins: var(--font-poppins), sans-serif;
   /*color pallete*/
   --primary-color: #131313;
   --secondary-color: #1b1b1b;
+  --tertiary-color: #565656;
 
   --primary-font-color: #eae8e4;
   --secondary-font-color: #888888;
-
-  /*algemeen measurements*/
-  --outer-empty-space: calc(50vw - 37.5rem);
+  --white: #fff;
 }
 
 /**********/
@@ -36,11 +35,11 @@
 
 * a,
 * p,
-* li {
+* li,
+* select {
   text-decoration: none;
-  color: var(--secondary-color);
-  font-family: "Poppins", sans-serif;
-
+  color: var(--white);
+  font-family: var(--font-family-poppins);
   -webkit-font-smoothing: antialiased;
   text-rendering: geometricPrecision;
   -moz-osx-font-smoothing: grayscale;
@@ -50,8 +49,9 @@
 
 * h1,
 * h2 {
-  font-family: "kopius", serif;
-  color: white;
+  font-family: var(--font-family-montserrat);
+  font-weight: 400;
+  font-size: 1rem;
   -webkit-font-smoothing: antialiased;
   text-rendering: geometricPrecision;
   -moz-osx-font-smoothing: grayscale;
@@ -59,7 +59,7 @@
 
 .container {
   max-width: 75rem;
-  padding: 1.5rem;
+  padding: 8rem 1.5rem 1.5rem;
   width: 100%;
   margin: auto;
 }
@@ -71,4 +71,11 @@ html {
 
 * ul {
   list-style: none;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
 }

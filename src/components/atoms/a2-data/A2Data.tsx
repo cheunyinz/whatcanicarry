@@ -23,11 +23,10 @@ const A2Data: React.FC<A2DataProps> = ({
   number =
     unit === "in" ? number * 0.3937 : unit === "lbs" ? number * 2.2046 : number;
 
-  const numberString = number.toString();
   return (
     <div className={styles.a2Data}>
-      <p>
-        {numberString} {unit}
+      <p className={styles.number}>
+        {number} <span className={styles.unit}>{unit}</span>
       </p>
       <p className={styles.description}>{description}</p>
     </div>

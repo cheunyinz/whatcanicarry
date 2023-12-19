@@ -1,0 +1,13 @@
+.a1heading {
+  position: relative;
+
+  &[data-variant="default"] {
+    color: var(--primary-font-color);
+  }
+
+  &[data-variant="dynamic"] {
+    color: var(--secondary-font-color);
+    border-inline-start: 2px solid var(--airline-color);
+    padding-inline-start: 1rem;
+  }
+}
