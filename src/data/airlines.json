@@ -68,5 +68,33 @@
       "baggageWeight": 10
     },
     "url": "https://help.ryanair.com/hc/en-gb/categories/12489112419089-Bag-Rules"
+  },
+  {
+    "name": "Korean Air",
+    "icao": "KAL",
+    "color": "#00256c",
+    "carryOn": {
+      "baggageSize": {
+        "length": 55,
+        "width": 40,
+        "depth": 20
+      },
+      "baggageWeight": 10
+    },
+    "url": "https://www.koreanair.com/es/en/airport/baggage/overview"
+  },
+  {
+    "name": "Cathay Pacific",
+    "icao": "CPA",
+    "color": "#005D63",
+    "carryOn": {
+      "baggageSize": {
+        "length": 56,
+        "width": 36,
+        "depth": 23
+      },
+      "baggageWeight": 7
+    },
+    "url": "https://www.cathaypacific.com/cx/en_HK/baggage.html"
   }
 ]

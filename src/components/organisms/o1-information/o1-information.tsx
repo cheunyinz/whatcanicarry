@@ -18,18 +18,20 @@ const O1Information: React.FC<O1InformationProps> = ({
 }) => {
   return (
     <section className={styles.O1Information}>
-      {infosections && infosections.length > 0 ? (
-        infosections.map((infosection) => (
-          <M1InfoSection
-            key={infosection.heading}
-            heading={infosection.heading}
-            dataset={infosection.dataset}
-          />
-        ))
-      ) : (
-        <p>No information available</p>
-      )}
-      <A5Link text={text} link={url} target="_blank" />
+      <div className={styles.wrapper}>
+        {infosections && infosections.length > 0 ? (
+          infosections.map((infosection) => (
+            <M1InfoSection
+              key={infosection.heading}
+              heading={infosection.heading}
+              dataset={infosection.dataset}
+            />
+          ))
+        ) : (
+          <p>No information available</p>
+        )}
+        <A5Link text={text} link={url} target="_blank" />
+      </div>
     </section>
   );
 };

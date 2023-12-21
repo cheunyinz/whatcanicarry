@@ -1,9 +1,19 @@
 .O1Information {
   background: var(--secondary-color);
-  padding: 1rem 2rem;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   gap: 3rem;
   margin-block-start: 2rem;
   border-radius: 1rem;
+
+  .wrapper {
+    max-width: 18rem;
+    margin-inline: auto;
+    width: 100%;
+
+    & > *:not(:last-child) {
+      margin-block-end: 2rem;
+    }
+  }
 }

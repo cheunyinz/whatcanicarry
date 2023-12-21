@@ -8,14 +8,14 @@ import { A2DataProps } from "../src/components/atoms/a2-data/A2Data";
 import M2Form, { M2FormProps } from "../src/components/molecule/m2-form/M2Form";
 
 export default function Home() {
-  const [airline, setAirline] = useState("EZY");
+  const [airline, setAirline] = useState("");
   const [isMetric, setMetric] = useState(true);
   const airlineData = airlines.find((a) => a.icao === airline);
 
   if (typeof document !== "undefined") {
     document.documentElement.style.setProperty(
       "--airline-color",
-      `${airlineData?.color}`
+      `${airlineData?.color || "var(--secondary-font-color)"}`
     );
   }
 
@@ -56,7 +56,7 @@ export default function Home() {
     dataset: Array<A2DataProps>;
   }> = [
     {
-      heading: "Maximum baggage size",
+      heading: "Maximum baggage dimensions",
 
       dataset: [
         {

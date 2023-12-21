@@ -1,5 +1,8 @@
 .m1InfoSection {
   display: flex;
   flex-direction: column;
-  align-items: center;
+
+  .list {
+    margin-inline: auto;
+  }
 }

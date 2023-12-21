@@ -13,7 +13,7 @@ const M1InfoSection: React.FC<M1InfoSectionProps> = ({ heading, dataset }) => {
   return (
     <section className={styles.m1InfoSection}>
       <A1Heading heading={heading} variant="dynamic" />
-      <ul>
+      <ul className={styles.list}>
         {dataset.map((data, index) => (
           <li key={index}>
             <A2Data

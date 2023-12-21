@@ -21,6 +21,9 @@ const A3Select: React.FC<A3SelectProps> = ({
   });
   return (
     <select className={styles.a3Select} name={name} id={id} onChange={onChange}>
+      <option disabled selected value="">
+        Select airline
+      </option>
       {sortedChildren}
     </select>
   );
