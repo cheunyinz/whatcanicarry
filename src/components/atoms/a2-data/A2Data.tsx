@@ -11,13 +11,13 @@ export type A2DataProps = {
 const A2Data: React.FC<A2DataProps> = ({
   number,
   unit,
-  isMetric = true,
+  isMetric,
   description,
 }) => {
   unit =
-    isMetric === false && "cm"
+    isMetric === false && unit === "cm"
       ? "in"
-      : isMetric === false && "kg"
+      : isMetric === false && unit === "kg"
       ? "lbs"
       : unit;
   number =
@@ -26,7 +26,7 @@ const A2Data: React.FC<A2DataProps> = ({
   return (
     <div className={styles.a2Data}>
       <p className={styles.number}>
-        {number} <span className={styles.unit}>{unit}</span>
+        {number.toFixed(0)} <span className={styles.unit}>{unit}</span>
       </p>
       <p className={styles.description}>{description}</p>
     </div>

@@ -21,22 +21,25 @@
       font-family: var(--font-family-poppins);
 
       &::before {
-        content: attr(data-on);
+        content: attr(data-off);
         position: absolute;
         font-weight: 500;
-        right: 20px;
+        left: 20px;
       }
 
       &::after {
-        content: attr(data-off);
+        content: attr(data-on);
         background-color: var(--airline-color);
         border-radius: 26px;
         position: absolute;
-        left: 10px;
+        right: 10px;
         text-align: center;
         transition: all 0.3s ease;
         box-shadow: 0px 0px 6px -2px #111;
         padding: 0.5rem 1rem;
+      }
+      &:hover {
+        cursor: pointer;
       }
     }
 
@@ -56,14 +59,14 @@
         color: #fff;
       }
       & + label.btnSwitchInner:after {
-        content: attr(data-on);
-        left: 96px;
+        content: attr(data-off);
+        right: 110px;
       }
 
       & + label.btnSwitchInner:before {
-        content: attr(data-off);
-        right: auto;
-        left: 20px;
+        content: attr(data-on);
+        left: auto;
+        right: 20px;
       }
     }
   }

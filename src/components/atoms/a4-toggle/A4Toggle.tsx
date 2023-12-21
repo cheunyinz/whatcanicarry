@@ -1,8 +1,8 @@
-import React from "react";
+import React, { ChangeEvent } from "react";
 import styles from "./A4Toggle.module.scss";
-import classNames from "clsx";
 
 export type A4ToggleProps = {
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
   firstToggle: string;
   secondToggle: string;
   toggleName: string;
@@ -12,6 +12,7 @@ const A4Toggle: React.FC<A4ToggleProps> = ({
   firstToggle,
   secondToggle,
   toggleName,
+  onChange,
 }) => {
   return (
     <div className={styles.a4Toggle}>
@@ -21,7 +22,8 @@ const A4Toggle: React.FC<A4ToggleProps> = ({
           type="checkbox"
           name={toggleName}
           id={toggleName}
-          value="1"
+          defaultChecked
+          onChange={onChange}
         ></input>
         <label
           htmlFor={toggleName}

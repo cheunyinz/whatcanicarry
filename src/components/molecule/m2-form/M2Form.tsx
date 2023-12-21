@@ -34,6 +34,7 @@ const M2Form: React.FC<M2FormProps> = ({ heading, select, toggle }) => {
             firstToggle={toggle.firstToggle}
             secondToggle={toggle.secondToggle}
             toggleName={toggle.toggleName}
+            onChange={toggle.onChange}
           />
         )}
       </form>

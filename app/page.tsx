@@ -1,14 +1,15 @@
 "use client";
 
 import React, { ChangeEvent } from "react";
-import airlines from "../../data/airlines.json" assert { type: "json" };
+import airlines from "../src/data/airlines.json" assert { type: "json" };
 import { useState } from "react";
-import O1Information from "../organisms/o1-information/o1-information";
-import { A2DataProps } from "../atoms/a2-data/A2Data";
-import M2Form, { M2FormProps } from "../molecule/m2-form/M2Form";
+import O1Information from "../src/components/organisms/o1-information/o1-information";
+import { A2DataProps } from "../src/components/atoms/a2-data/A2Data";
+import M2Form, { M2FormProps } from "../src/components/molecule/m2-form/M2Form";
 
 export default function Home() {
   const [airline, setAirline] = useState("EZY");
+  const [isMetric, setMetric] = useState(true);
   const airlineData = airlines.find((a) => a.icao === airline);
 
   if (typeof document !== "undefined") {
@@ -20,6 +21,12 @@ export default function Home() {
 
   const handleAirlineChange = (event: ChangeEvent<HTMLSelectElement>) => {
     setAirline(event.target.value);
+  };
+
+  const handleUnitChange = (event: ChangeEvent<HTMLInputElement>) => {
+    console.log("checked");
+    setMetric(event.target.checked);
+    console.log(event.target.checked, "ismetric");
   };
 
   const formData: M2FormProps = {
@@ -39,7 +46,8 @@ export default function Home() {
     toggle: {
       firstToggle: "Metric",
       secondToggle: "Imperial",
-      toggleName: "unit",
+      toggleName: "isMetric",
+      onChange: handleUnitChange,
     },
   };
 
@@ -55,16 +63,19 @@ export default function Home() {
           number: airlineData?.carryOn?.baggageSize?.length || 0,
           unit: "cm",
           description: "Length",
+          isMetric: isMetric,
         },
         {
           number: airlineData?.carryOn?.baggageSize?.width || 0,
           unit: "cm",
           description: "Width",
+          isMetric: isMetric,
         },
         {
           number: airlineData?.carryOn?.baggageSize?.depth || 0,
           unit: "cm",
           description: "Depth",
+          isMetric: isMetric,
         },
       ],
     },
@@ -74,6 +85,7 @@ export default function Home() {
         {
           number: airlineData?.carryOn?.baggageWeight || 0,
           unit: "kg",
+          isMetric: isMetric,
         },
       ],
     },

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.scss";
-import Home from "../src/components/templates/PageHome";
+import Home from "./page";
 import { Poppins, Montserrat } from "next/font/google";
 import O2Footer from "@/components/organisms/o2-footer/o2-footer";
 
