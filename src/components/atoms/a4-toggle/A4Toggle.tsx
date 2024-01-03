@@ -16,7 +16,6 @@ const A4Toggle: React.FC<A4ToggleProps> = ({
 }) => {
   return (
     <div className={styles.a4Toggle}>
-      {/* <label className="switch btn-color-mode-switch">  */}
       <label className={styles.btnSwitch}>
         <input
           type="checkbox"

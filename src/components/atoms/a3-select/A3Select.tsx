@@ -20,8 +20,14 @@ const A3Select: React.FC<A3SelectProps> = ({
     return aKey.localeCompare(bKey);
   });
   return (
-    <select className={styles.a3Select} name={name} id={id} onChange={onChange}>
-      <option disabled selected value="">
+    <select
+      defaultValue={"select"}
+      className={styles.a3Select}
+      name={name}
+      id={id}
+      onChange={onChange}
+    >
+      <option disabled value="select">
         Select airline
       </option>
       {sortedChildren}

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { ChangeEvent } from "react";
+import React, { ChangeEvent, useEffect } from "react";
 import airlines from "../src/data/airlines.json" assert { type: "json" };
 import { useState } from "react";
 import O1Information from "../src/components/organisms/o1-information/o1-information";
@@ -11,22 +11,23 @@ export default function Home() {
   const [airline, setAirline] = useState("");
   const [isMetric, setMetric] = useState(true);
   const airlineData = airlines.find((a) => a.icao === airline);
+  const baggageSizeData = airlineData?.carryOn?.baggageSize;
 
-  if (typeof document !== "undefined") {
-    document.documentElement.style.setProperty(
-      "--airline-color",
-      `${airlineData?.color || "var(--secondary-font-color)"}`
-    );
-  }
+  useEffect(() => {
+    if (typeof document !== "undefined") {
+      document.documentElement.style.setProperty(
+        "--airline-color",
+        `${airlineData?.color || "var(--secondary-font-color)"}`
+      );
+    }
+  }, [airlineData]);
 
   const handleAirlineChange = (event: ChangeEvent<HTMLSelectElement>) => {
     setAirline(event.target.value);
   };
 
   const handleUnitChange = (event: ChangeEvent<HTMLInputElement>) => {
-    console.log("checked");
     setMetric(event.target.checked);
-    console.log(event.target.checked, "ismetric");
   };
 
   const formData: M2FormProps = {
@@ -60,22 +61,22 @@ export default function Home() {
 
       dataset: [
         {
-          number: airlineData?.carryOn?.baggageSize?.length || 0,
+          number: baggageSizeData?.length || 0,
           unit: "cm",
           description: "Length",
-          isMetric: isMetric,
+          isMetric,
         },
         {
-          number: airlineData?.carryOn?.baggageSize?.width || 0,
+          number: baggageSizeData?.width || 0,
           unit: "cm",
           description: "Width",
-          isMetric: isMetric,
+          isMetric,
         },
         {
-          number: airlineData?.carryOn?.baggageSize?.depth || 0,
+          number: baggageSizeData?.depth || 0,
           unit: "cm",
           description: "Depth",
-          isMetric: isMetric,
+          isMetric,
         },
       ],
     },
@@ -85,7 +86,7 @@ export default function Home() {
         {
           number: airlineData?.carryOn?.baggageWeight || 0,
           unit: "kg",
-          isMetric: isMetric,
+          isMetric,
         },
       ],
     },
@@ -94,14 +95,10 @@ export default function Home() {
   return (
     <main>
       <div className="container">
-        <M2Form
-          heading={formData.heading}
-          select={formData.select}
-          toggle={formData.toggle}
-        />
+        <M2Form {...formData} />
         <O1Information
           infosections={airlineDataSet}
-          url={airlines.find((a) => a.icao === airline)?.url || "#"}
+          url={airlineData?.url || "#"}
           text="Visit airline website"
         />
       </div>

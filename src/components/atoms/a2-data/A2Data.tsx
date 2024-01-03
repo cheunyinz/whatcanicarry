@@ -28,7 +28,7 @@ const A2Data: React.FC<A2DataProps> = ({
       <p className={styles.number}>
         {number.toFixed(0)} <span className={styles.unit}>{unit}</span>
       </p>
-      <p className={styles.description}>{description}</p>
+      {description && <p className={styles.description}>{description}</p>}
     </div>
   );
 };
